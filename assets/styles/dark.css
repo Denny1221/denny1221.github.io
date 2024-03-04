@@ -1,0 +1,43 @@
+hr
+{
+    background-color: grey;
+}
+.table
+{
+    background: #29292b;
+    color:white;
+}
+
+#mainContainerBackground
+{
+    background-color: var(--foregroundColourDark);
+    color: white;
+}
+#contentContainer
+{
+    background-color: var(--baackgroundColourDark);
+}
+
+#websiteTitle, .navItem:link, .navItem:visited, .navItem
+{
+    color: white;
+}
+
+#contentsListDiv, .articleImageBackgroundDiv
+{
+    background-color: #333;
+}
+
+
+.boxShadow1
+{
+    box-shadow: 1px 1px 8px rgba(255,255,255,1);
+}
+.boxShadow032
+{
+    box-shadow: 1px 1px 8px rgba(255,255,255,0.32);
+}
+.boxShadow04
+{   
+    box-shadow: 1px 1px 8px rgba(255,255,255,0.4);
+}

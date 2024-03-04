@@ -1,0 +1,41 @@
+#updatesWindow
+{
+	width: 100%; 
+	height: 95%; 
+	border: 1px red solid;
+	margin-bottom: 10px;
+	text-align: left;		
+}
+.updateArticleTitleHr
+{
+    margin-top:    7px;
+    margin-bottom: 5px;
+}
+.updateArticlesSeparator
+{
+	margin: 0px;
+	border-width: 2px;
+}
+.updateTitle
+{
+    font-weight: bold;
+    font-size: 1em;
+    font-style: normal;
+	/* text-align: left !important; */
+}
+.updateSubtitle
+{
+    font-style: normal;
+    font-size: 0.9em;
+}
+.updateBgr
+{
+    /* background-color:beige; */
+    padding: 10px;
+    border-radius: 5px;
+}
+#updatesGridWrapper
+{
+    display: grid;
+    grid-template-columns: 1fr;
+}
