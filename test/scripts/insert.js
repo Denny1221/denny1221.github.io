@@ -15,7 +15,7 @@ documentBody.style.opacity = "0.25";
 
 async function GatherResources ()
 {
-    layoutData = await fetch("/-test/base.html");
+    layoutData = await fetch("/test/base.html");
     headerData = await fetch("/assets/parts/header.html");
     navData    = await fetch("/assets/parts/nav.html"); 
     footerData = await fetch("/assets/parts/footer.html");
@@ -36,7 +36,7 @@ async function InsertStuff ()
 
     $("main")[0].innerHTML = pageContent;
 
-    const commonStylesHtml = await fetch("/-test/commonStyles.html");
+    const commonStylesHtml = await fetch("/test/commonStyles.html");
     const commStylesText = await commonStylesHtml.text();
     documentHead.insertAdjacentHTML("beforeend",commStylesText);
 
