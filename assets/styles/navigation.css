@@ -1,0 +1,33 @@
+.primaryList
+{
+    font-weight: bold;
+    list-style: none;
+    font-size: 1.05em;
+}
+.secondaryList
+{
+    font-weight: normal;
+    list-style: none;
+    font-size: 0.95em;
+    margin-left: -20px;
+}
+
+.navItemGroup
+{
+    margin-top: 7.5px;
+}
+.navItem:link, .navItem:visited, .navItem
+{
+    color: black;
+}
+.navItem:hover
+{
+    color: var(--orange1);
+    text-decoration:underline;
+}
+.linkHide, .linkHide:link, .linkHide:hover, .linkHide:visited
+{
+    color: black;
+    cursor: default;
+    text-decoration: none;
+}
