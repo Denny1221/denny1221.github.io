@@ -57,7 +57,7 @@ Items grid
 /* 
     Steam widget
 */
-#steamPageMain
+#steamdocMain
 {
 	display: grid;
 	grid-template-columns: 0.75fr 2fr;

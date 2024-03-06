@@ -1,9 +1,11 @@
-const pageBody = $("body")[0];
-const pageHead = $("head")[0];
-let   pageMain;// = $("main")[0];
+const docBody = $("body")[0];
+const docHead = $("head")[0];
+let   docMain;// = $("main")[0];
 
-pageBody.style.opacity = "0.0";
+// Set opacity tpo 0 to hide everything
+docBody.style.opacity = "0.0";
 
+// get document ready state
 const isDocumentReady = new Promise((resolve, reject) => 
 {
     setTimeout(() => 
@@ -20,14 +22,14 @@ const isDocumentReady = new Promise((resolve, reject) =>
     } , 1000);
 } ) ;
 
+// Various page compinents
 let layoutData;     let headerData;     let navData;    let footerData;
 let layoutHtml;     let headerHtml;     let navHtml;    let footerHtml;
 
 let commonCssData;     let commonCssText;
 let articleLayoutData; let articleLayoutHtml;
 
-
-
+// RETRIEVE CODE FOR EACH COMPONENT
 async function GatherResources (isCustomPage)
 {
     console.time("__TOTAL_TIME_");
@@ -41,7 +43,7 @@ async function GatherResources (isCustomPage)
             headerHtml = localStorage.getItem("headerHtml");
             navHtml    = localStorage.getItem("navHtml");
             footerHtml = localStorage.getItem("footerHtml");
-            
+
             commonCssText = localStorage.getItem("commonCSS");
             articleLayoutHtml = localStorage.getItem("articleLayoutHtml");
         break;
@@ -52,7 +54,7 @@ async function GatherResources (isCustomPage)
             const ovrlData = await fetch("./overlay.html");
             const ovrText  = await ovrlData.text();
             
-            pageBody.insertAdjacentHTML("afterend",ovrText);
+            docBody.insertAdjacentHTML("afterend",ovrText);
             
             layoutData = await fetch("/-test/base.html");
             headerData = await fetch("/assets/parts/header.html");
@@ -68,7 +70,6 @@ async function GatherResources (isCustomPage)
             articleLayoutData = await fetch("/-test/articleLayout.html");
             commonCssText     = await commonCssData.text();
             articleLayoutHtml = await articleLayoutData.text();
-            
 
             localStorage.setItem("layoutHtml",layoutHtml);
             localStorage.setItem("headerHtml",headerHtml);
@@ -80,71 +81,89 @@ async function GatherResources (isCustomPage)
         break;
     }
     console.timeEnd("_getHtmlData");
-    InsertStuff(isCustomPage);
+    BuildPage(isCustomPage);
 }
 
+//
+// SET IF LAYOUT IS CACHED
+//
 let layoutCached = false;
 function IsLayoutCodeCached ()
 {
     if (localStorage.getItem("layoutHtml") == null || localStorage.getItem("headerHtml") == null || localStorage.getItem("navHtml") == null ||
         localStorage.getItem("footerHtml") == null || localStorage.getItem("articleLayoutHtml") == null || localStorage.getItem("commonCSS") == null ) 
     {
-        // return false
         layoutCached = false;
     }
     else 
     {
-        // return true;
         layoutCached = true;
     }
 }
 
-async function InsertStuff (isCustomPage)
+//
+// BUILD PAGE
+//
+async function BuildPage (isCustomPage)
 {
     console.time("_inserStuff");
+    
+    // If no argument is passed to isCustomPage, default to false
     if (isCustomPage == undefined || isCustomPage == "")
     {
         isCustomPage = false;
     }
-
-    // Sacve content of the page (body)
-    const pageContent = pageBody.innerHTML;
+    // Save content of the page (body)
+    const pageContent = docBody.innerHTML;
 
     // Replace body with page layout
-    pageBody.innerHTML = layoutHtml;
-    pageMain = $("main")[0];
+    docBody.innerHTML = layoutHtml;
+    docMain = $("main")[0];
 
+    // Load blank layout or article layout
     switch(isCustomPage)
     {
         case true:
             // Insert page content into the <main> tag
-            pageMain.innerHTML = pageContent;
+            docMain.innerHTML = pageContent;
             break;
 
         case false:
-            pageMain.innerHTML = articleLayoutHtml;
+            docMain.innerHTML = articleLayoutHtml;
             $(".articleContent")[0].innerHTML = pageContent;
             break;
     }
 
     // Add CSS libraries
-    pageHead.insertAdjacentHTML("beforeend",commonCssText);
+    docHead.insertAdjacentHTML("beforeend",commonCssText);
 
-    // Add navbar, header, and foooter
+    // Add navbar, header, and foooter if layout isnt cached
     if (layoutCached == false)
     {
         $("#websiteHeader")[0].innerHTML = headerHtml;
         $("#navigation")   [0].innerHTML = navHtml;
         $("#footerContent")[0].innerHTML = footerHtml;
     }
+
+    // If there's an element with the id of sidebar, move it to the right column
+    if ($("#sidebar")[0] != undefined)
+    {
+        const sideBarContent = $("#sidebar")[0].innerHTML;
+        $("#sidebar")[0].remove();
+        $(".articleSidebar")[0].insertAdjacentHTML("beforeend",sideBarContent);
+    }
+
+    const pageTitle = $(".pageTitle")[0].outerHTML;
+    const pageTitleUnderline = $(".pageTitleUnderline")[0].outerHTML;
+
+    $(".pageTitle").remove();
+    $(".pageTitleUnderline").remove(); 
+
+    const titleAndHr = pageTitle + pageTitleUnderline;
+
+    docMain.insertAdjacentHTML("afterbegin",titleAndHr);
     
     console.timeEnd("_inserStuff");
-    // Wait for codeDelay milliseconds to Reveal the built page
-    let codeDelay = 250;
-    setTimeout(() => 
-    { 
-        pageBody.style.opacity = "1";
-    }, codeDelay);
 
     // Hide loading overlay
     if ($("#mainOverlayDiv")[0] != undefined)
@@ -154,6 +173,22 @@ async function InsertStuff (isCustomPage)
             $("#mainOverlayDiv")[0].style.display = "none"; 
         } ) ;
     }
+    
+    // Wait for delay milliseconds to reveal the built page
+    let delay = 100;
+    setTimeout(() => 
+    { 
+        // docBody.style.opacity = "1";
+        docBody.classList.add("pageFadeIn");
+    }, delay);
+    
+    // Wait for delay milliseconds to reveal the built page
+    delay = 1000;
+    setTimeout(() => 
+    { 
+        docBody.style.opacity = "1";
+        docBody.classList.remove("pageFadeIn");
+    }, delay);
 
     console.timeEnd("__TOTAL_TIME_");
 }
