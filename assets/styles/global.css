@@ -27,6 +27,7 @@ body
 {
     font-family: Ubuntu, Roboto, system-ui ;
     background-image: url("/assets/images/maps/overworld.jpg");
+    background-attachment: fixed;
     background-position: top;
     background-repeat: repeat-y;
     background-size: cover;
@@ -49,13 +50,13 @@ body
     padding: 10px;
     
     background-color: var(--foregroundColourLight);
-    backdrop-filter: blur(16px);
+    backdrop-filter: blur(10px);
     columns: black;
 }
 #mainContainerForeground
 {
     display: grid;
-    grid-template-columns: 250px auto;
+    grid-template-columns: 15% auto;
     width: 100%;
 }
 
@@ -139,4 +140,23 @@ body
 .boxShadow04
 {   
     box-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+}
+
+.pageFadeIn
+{
+    animation-name: pageFadeInKFs;
+    animation-fill-mode: forwards;
+    animation-duration: 0.1s;
+    animation-timing-function: ease-in-out;
+}
+@keyframes pageFadeInKFs
+{
+    0%
+    {
+        opacity: 0.0;
+    }
+    100%
+    {
+        opacity: 1.0;
+    }
 }

@@ -1,9 +1,16 @@
 .articleColumnsContainer
 {
     display: grid;
-    grid-template-columns: auto 350px;
+    grid-template-columns: 75% auto;
     column-gap: 15px;
 }
+
+/* .articleSidebar
+{
+    min-width: 250px;
+    width: 100%;
+    max-width: 350px;
+} */
 
 .articleImageBackgroundDiv
 {
