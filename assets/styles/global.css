@@ -25,8 +25,8 @@ a:hover
 
 body
 {
-    font-family: Roboto, Oxygen, Ubuntu;
-    background-image: url("/assets/images/maps/overworld.png");
+    font-family: Ubuntu, Roboto, system-ui ;
+    background-image: url("/assets/images/maps/overworld.jpg");
     background-position: top;
     background-repeat: repeat-y;
     background-size: cover;
