@@ -50,23 +50,23 @@ async function GatherResources(isCustomPage)
 			console.log("Layout code isn't chached. Downloading it from the server.");
 
 			const ovrlData = await fetch("./overlay.html");
-			const ovrText = await ovrlData.text();
+			const ovrText  = await ovrlData.text();
 
 			docBody.insertAdjacentHTML("afterend", ovrText);
 
 			layoutData = await fetch("/-test/base.html");
 			headerData = await fetch("/assets/parts/header.html");
-			navData = await fetch("/assets/parts/nav.html");
+			navData    = await fetch("/assets/parts/nav.html");
 			footerData = await fetch("/assets/parts/footer.html");
 
 			layoutHtml = await layoutData.text();
 			headerHtml = await headerData.text();
-			navHtml = await navData.text();
+			navHtml    = await navData.text();
 			footerHtml = await footerData.text();
 
-			commonCssData = await fetch("/-test/commonStyles.html");
+			commonCssData 	  = await fetch("/-test/commonStyles.html");
 			articleLayoutData = await fetch("/-test/articleLayout.html");
-			commonCssText = await commonCssData.text();
+			commonCssText 	  = await commonCssData.text();
 			articleLayoutHtml = await articleLayoutData.text();
 
 			sessionStorage.setItem("layoutHtml", layoutHtml);
@@ -155,7 +155,7 @@ async function CompilePage(isCustomPage)
 
 	// Move article title and underline outisde of the aritcle container
 	$(".pageTitle").remove();
-	$(".pageTitleUnderline").remove();
+	$(".pageTitleUnderline")[0].remove();
 	const titleAndHr = pageTitle + pageTitleUnderline;
 	docMain.insertAdjacentHTML("afterbegin", titleAndHr);
 
