@@ -37,13 +37,13 @@ async function GatherResources(isCustomPage)
 	switch (layoutCached)
 	{
 		case true:
-			layoutHtml = localStorage.getItem("layoutHtml");
-			headerHtml = localStorage.getItem("headerHtml");
-			navHtml = localStorage.getItem("navHtml");
-			footerHtml = localStorage.getItem("footerHtml");
+			layoutHtml = sessionStorage.getItem("layoutHtml");
+			headerHtml = sessionStorage.getItem("headerHtml");
+			navHtml = sessionStorage.getItem("navHtml");
+			footerHtml = sessionStorage.getItem("footerHtml");
 
-			commonCssText = localStorage.getItem("commonCSS");
-			articleLayoutHtml = localStorage.getItem("articleLayoutHtml");
+			commonCssText = sessionStorage.getItem("commonCSS");
+			articleLayoutHtml = sessionStorage.getItem("articleLayoutHtml");
 			break;
 
 		case false:
@@ -69,13 +69,13 @@ async function GatherResources(isCustomPage)
 			commonCssText = await commonCssData.text();
 			articleLayoutHtml = await articleLayoutData.text();
 
-			localStorage.setItem("layoutHtml", layoutHtml);
-			localStorage.setItem("headerHtml", headerHtml);
-			localStorage.setItem("navHtml", navHtml);
-			localStorage.setItem("footerHtml", footerHtml);
+			sessionStorage.setItem("layoutHtml", layoutHtml);
+			sessionStorage.setItem("headerHtml", headerHtml);
+			sessionStorage.setItem("navHtml", navHtml);
+			sessionStorage.setItem("footerHtml", footerHtml);
 
-			localStorage.setItem("commonCSS", commonCssText);
-			localStorage.setItem("articleLayoutHtml", articleLayoutHtml);
+			sessionStorage.setItem("commonCSS", commonCssText);
+			sessionStorage.setItem("articleLayoutHtml", articleLayoutHtml);
 			break;
 	}
 	console.timeEnd("_getHtmlData");
@@ -88,8 +88,8 @@ let layoutCached = false;
 
 function IsLayoutCodeCached()
 {
-	if (localStorage.getItem("layoutHtml") == null || localStorage.getItem("headerHtml") == null || localStorage.getItem("navHtml") == null ||
-		localStorage.getItem("footerHtml") == null || localStorage.getItem("articleLayoutHtml") == null || localStorage.getItem("commonCSS") == null)
+	if (sessionStorage.getItem("layoutHtml") == null || sessionStorage.getItem("headerHtml") == null || sessionStorage.getItem("navHtml") == null ||
+		sessionStorage.getItem("footerHtml") == null || sessionStorage.getItem("articleLayoutHtml") == null || sessionStorage.getItem("commonCSS") == null)
 	{
 		layoutCached = false;
 	}
