@@ -27,24 +27,23 @@
 		<meta name='robots'      content="index,follow">
 		<meta name="language"    content="en">
 
+		<meta charset="utf-8"> <!-- Chatracter set-->
 		<link rel="shortcut icon" type="image/png" href="/assets/images/crown.png"> <!-- Tab icon-->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">  <!-- Responsive design-->
-		<meta charset="utf-8"> <!-- Chatracter set-->
 		
-		<!-- BOOTSTRAP 5 -->
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 		<!-- HTMX -->
 		<script src="https://unpkg.com/htmx.org@1.9.4" integrity="sha384-zUfuhFKKZCbHTY6aRR46gxiqszMk5tcHjsVFxnUo8VMus4kHGVdIYVbOYYNlKmHV" crossorigin="anonymous"></script>
 		<!-- jQuery  -->
 		<script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
 		
-		
-		<link rel="stylesheet" href="/assets/styles/layouts/article.css">
-		<script src="/assets/scripts/contentsMenu.js"></script> <!-- Contents menu script -->
-    </head>
-    <body>
+		<!-- ADDITIONAL STYLES -->
+		<!-- <link rel="stylesheet" href="/assets/styles/layouts/article.css"> -->
+		<!-- Contents menu script -->
+		<script src="/assets/scripts/contentsMenu.js"></script> 
+	</head>
+	<body>
 		<style>
-            body {
+			body {
 				background-image: url("/assets/images/maps/uferwind/uferwind_clean.png");
 			}
 
@@ -290,28 +289,28 @@
 		    </div>
 		</article> <!-- gallery -->
 
-        <article id="sidebar">
-            <div class="articleImageBackgroundDiv boxShadow04">
-                <a href="/assets/images/maps/uferwind/uferwind_clean.png" target="_blank" class="articleImageLink">
-                    <img class="articleImage" src="/assets/images/maps/uferwind/uferwind_clean.png">
-                </a>
-                <br>
-                    <span class="articleImageTitle">
-                    Uferwind without buildings.
-                </span>
-            </div>
-            <div class="articleImageBackgroundDiv boxShadow04">
-                <a href="/assets/images/maps/uferwind/uferwind_lvl_sleect.png" target="_blank" class="articleImageLink">
-                    <img class="articleImage" src="/assets/images/maps/uferwind/uferwind_lvl_sleect.png">
-                </a>
-                <br>
-                <span class="articleImageTitle">
-                    Uferwind in the level selection.
-                </span>
-            </div>
-        </article>
+		<article id="sidebar">
+		    <div class="articleImageBackgroundDiv boxShadow04">
+				<a href="/assets/images/maps/uferwind/uferwind_clean.png" target="_blank" class="articleImageLink">
+				    <img class="articleImage" src="/assets/images/maps/uferwind/uferwind_clean.png">
+				</a>
+				<br>
+				    <span class="articleImageTitle">
+				    Uferwind without buildings.
+				</span>
+		    </div>
+		    <div class="articleImageBackgroundDiv boxShadow04">
+				<a href="/assets/images/maps/uferwind/uferwind_lvl_sleect.png" target="_blank" class="articleImageLink">
+				    <img class="articleImage" src="/assets/images/maps/uferwind/uferwind_lvl_sleect.png">
+				</a>
+				<br>
+				<span class="articleImageTitle">
+				    Uferwind in the level selection.
+				</span>
+		    </div>
+		</article>
     </body>
     
     <script src="./scripts/insert.js"></script>
-    <script>GatherResources();</script>
+    <script>BuildPage();</script>
 </html>

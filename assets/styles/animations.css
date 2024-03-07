@@ -16,21 +16,21 @@
 {
     0% 
     {
-        scale: 100%;
+		scale: 100%;
     }
     100%
     {
-        scale: 105%
+		scale: 105%
     }
 }
 @keyframes scaleImageShrinkKeyframes
 {
     0% 
     {
-        scale: 105%;
+		scale: 105%;
     }
     100%
     {
-        scale: 100%
+		scale: 100%
     }
 }
