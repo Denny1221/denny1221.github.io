@@ -1,5 +1,7 @@
 #contentsListDiv
 {
+    /* temporarily disabled becuase CSS is a fuckign piece of unusable shit again. */
+    /* DISPLAY: NONE; */
     text-align: left; 
     margin-bottom: 15px;
 
