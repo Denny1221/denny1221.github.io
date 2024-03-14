@@ -1,21 +1,31 @@
+a, a:link, a:visited
+{
+    color: var(--orangeForDark);
+    text-decoration: none;
+}
+
 hr
 {
     background-color: grey;
 }
 .table
 {
-    background: #29292b;
+    background: #2a2a2a;
     color:white;
+}
+.table-light
+{
+    background-color: hsl(0, 0%, 70%);
 }
 
 #mainContainerBackground
 {
-    background-color: var(--foregroundColourDark);
+    background-color: var(--mainContainerColourDark);
     color: white;
 }
 #contentContainer
 {
-    background-color: var(--baackgroundColourDark);
+    background-color: var(--contentContainerColourDark);
 }
 
 #websiteTitle, .navItem:link, .navItem:visited, .navItem
@@ -23,11 +33,17 @@ hr
     color: white;
 }
 
-#contentsListDiv, .articleImageBackgroundDiv
+.suggestedPageItemContainer
 {
-    background-color: #333;
+    color: white;
+    background-color: var(--buttonColourDark);
 }
 
+.homeContainer, .galleryGrid, .articleImageBackgroundDiv, #contentsListDiv, .listLargeItemDiv, .listMediumItemDiv, .listSmallItemDiv, .codeBlock
+{
+    background-color: var(--smallBoxBgrColourDark);
+    backdrop-filter: blur(8px);
+}
 
 .boxShadow1
 {

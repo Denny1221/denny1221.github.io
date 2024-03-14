@@ -17,13 +17,16 @@
     column-gap: 15px;
 
     background-color: lightgray;
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 15px;
     box-shadow: 3px 3px 8px gray;
     /* border: 1px solid red; */
 }
-/* .listLargeImageDiv
-{} */
+.listLargeImageDiv
+{
+    align-items: center;
+    display: flex;
+}
 .listLargeTextDiv
 {
     /* margin-top: -5px; */
@@ -39,4 +42,8 @@
 {
     width: 100%;
     border-radius: 10px;
+}
+.mapLitstTextTitleLink, .mapLitstTextTitleLink:link, .mapLitstTextTitleLink:visited
+{
+    columns: white;
 }

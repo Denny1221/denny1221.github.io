@@ -19,7 +19,7 @@
     column-gap: 15px;
 
     background-color: lightgray;
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 10px;
     box-shadow: 3px 3px 8px gray;
     /* border: 1px solid red; */
@@ -51,3 +51,7 @@
     max-height: 110px;
     max-width: 110px;
 }
+/* .listMediumTextTitleLink, .listMediumTextTitleLink:link, .listMediumTextTitleLink:visited
+{
+    color: white;
+} */

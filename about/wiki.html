@@ -17,11 +17,11 @@
 			⠀⠀⠀⠀⠀⠀⠀⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀ 
 			⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠻⠿⠿⠿⠿⠛⠉-->
 <html lang="en">
-    <head>
+	<head>
 		<!-- PAGE TITLE -->
 		<title> About wiki | Thronefall wiki</title>
 		<!-- PAGE INFORMATION -->
-		<meta name="description" content="Information about the Thronefall wiki">
+		<meta name="description" content="About the Thronefall wiki">
 		<meta name="keywords"    content="Thronefall, leaderBoard, grizzly games, speedrun, wiki, fandom">
 		<meta name='author'      content="GhostMiner, ItsMeRaven"> 
 		<meta name='robots'      content="index,follow">
@@ -30,94 +30,75 @@
 		<link rel="shortcut icon" type="image/png" href="/assets/images/crown.png"> <!-- Tab icon-->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">  <!-- Responsive design-->
 		<meta charset="utf-8"> <!-- Chatracter set-->
-       
 		<!-- HTMX -->
 		<script src="https://unpkg.com/htmx.org@1.9.4" integrity="sha384-zUfuhFKKZCbHTY6aRR46gxiqszMk5tcHjsVFxnUo8VMus4kHGVdIYVbOYYNlKmHV" crossorigin="anonymous"></script>
-		<!-- BOOTSTRAP 5 -->
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-
-		<!-- STYLESHEETS -->
-		<link rel="stylesheet" href="/assets/styles/global.css">
-		<link rel="stylesheet" href="/assets/styles/headfoot.css">
-		<link rel="stylesheet" href="/assets/styles/navigation.css">
-    </head>
-
-    <body>
-		<div id="mainContainerBackground" class="roundCorners5px boxShadow1">
-		    <div id="mainContainerForeground">
-				<div id="sidebarContainer">
-				    <!-- Website title and logo -->
-				    <div id="websiteHeader" hx-get="/assets/parts/header.html" hx-swap="innerHTML" hx-trigger="load"></div> 
-				    <hr>
-				    <!-- Website navigation -->
-				    <div id="navigation" hx-get="/assets/parts/nav.html" hx-swap="innerHTML" hx-trigger="load"></div>
-				</div> <!-- sidebarContainer -->
-				<div id="contentContainer" class="roundCorners5px boxShadow032"> 
-				    <main>
-						<span class="pageTitle"> About this wiki </span>
-						<hr class="pageTitleUnderline">
-						
-						<p>This Wiki was created for and by the Thronefall community! You can join us on the official <a href="https://discord.gg/gVYctptyg8">Thronefall Discord</a> or the <a href="http://discord.gg/pfRJjfz6SU">Thronefall Wiki Discord</a>!</p>
-						<p>Most of the Information you can find on this wiki comes from this <a href="https://docs.google.com/spreadsheets/d/1ARWbg3C38IYT4FXrgtE46osWOJWUZFyY4WFj49sAM2s/edit#gid=1409809708">Data-Sheet</a>. Feel free to check it out for more detailed information!</p>
-						<p>While I (Hi, It's me, Raven. And yes that's an intended and bad pun with my name) currently created most of the articles on this wiki, there have been many great and talented people that have contributed to this community project. Below you can find a list of all the people who have put effort into this. All the love to them! (Hopefully I didn't forget anyone)</p>
-						
-						<span class="pageSubtitle"> Contributors </span>
-						<hr class="pageTitleUnderline">
-						<div class="table-responsive">
-						    <table class="table table-striped table-bordered">
-								<thead class="tableHeader">
-								    <tr>
-										<th class="align-middle">
-										    Contributor
-										</th>
-										<th class="align-middle">
-										    Contribution
-										</th>
-								    </tr>
-								</thead>
-								<tbody class="tableBody">
-								    <tr>
-										<td class="align-middle"><strong><a href="https://ghost-miner.github.io/">GhostMiner</a></strong></td>
-										<td class="align-middle">Article-Writing, Website-Creation and Design</td>
-								    </tr>
-								    <tr>
-										<td class="align-middle"><strong>ItsMe_Raven</strong></td>
-										<td class="align-middle">Article-Writing, Website-Creation and Design</td>
-								    </tr>
-								    <tr>
-										<td class="align-middle"><strong>lich46</strong></td>
-										<td class="align-middle"><a href="https://docs.google.com/spreadsheets/d/1ARWbg3C38IYT4FXrgtE46osWOJWUZFyY4WFj49sAM2s/edit#gid=1409809708">Data Collection</a> and Information Feedback</td>
-								    </tr>
-								    <tr>
-										<td class="align-middle"><strong>Gertimoshka</strong></td>
-										<td class="align-middle"><a href="https://docs.google.com/spreadsheets/d/1ARWbg3C38IYT4FXrgtE46osWOJWUZFyY4WFj49sAM2s/edit#gid=1409809708">Data Collection</a></td>
-								    </tr>
-								    <tr>
-										<td class="align-middle"><strong>FlediX2</strong></td>
-										<td class="align-middle">Information Feedback and Website Design</td>
-								    </tr>
-								    <tr>
-										<td class="align-middle"><strong>LTU_Adas</strong></td>
-										<td class="align-middle">Information and Design Feedback</td>
-								    </tr>
-								    <tr>
-										<td class="align-middle"><strong>emma</strong></td>
-										<td class="align-middle">Information and Design Feedback</td>
-								    </tr>
-								</tbody>
-						    </table>
-						</div>
-				    </main>
-				</div> <!-- contentContainer -->
-		    </div> <!-- mainContainerForeground -->
-		    
-		    <!-- Website footer -->
-		    <div id="footerContent" hx-get="/assets/parts/footer.html" hx-swap="innerHTML" hx-trigger="load"></div>
-		</div> <!-- mainContainerBackground -->
-
-		<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
-    
-    </body>
+		<!-- jQuery  -->
+		<script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
+		<!-- Various features -->
+		<script src="/assets/scripts/pageOptions.js"></script>
+		<!-- Article contents menu script -->
+		<script src="/assets/scripts/contentsMenu.js"></script> 
+		<!-- Dark mode -->
+		<script src="/assets/scripts/darkmode.js"></script>
+		<!-- Cookies -->
+		<script src="/assets/scripts/cookies.js"></script>
+	</head>
+	<body>
+		<!-- PAGE TITLE -->
+		<h1 class="pageTitle"> About wiki </h1>
+		<hr class="pageTitleUnderline">
+		
+		<p>This Wiki was created for and by the Thronefall community! You can join us on the official <a href="https://discord.gg/gVYctptyg8">Thronefall Discord</a> or the <a href="http://discord.gg/pfRJjfz6SU">Thronefall Wiki Discord</a>!</p>
+		<p>Most of the Information you can find on this wiki comes from this <a href="https://docs.google.com/spreadsheets/d/1ARWbg3C38IYT4FXrgtE46osWOJWUZFyY4WFj49sAM2s/edit#gid=1409809708">Data-Sheet</a>. Feel free to check it out for more detailed information!</p>
+		<p>While I (Hi, It's me, Raven. And yes that's an intended and bad pun with my name) currently created most of the articles on this wiki, there have been many great and talented people that have contributed to this community project. Below you can find a list of all the people who have put effort into this. All the love to them! (Hopefully I didn't forget anyone)</p>
+		
+		<h2 class="pageSubtitle"> Contributors </h2>
+		<hr class="pageTitleUnderline">
+			<table>
+				<thead class="tableHeader">
+					<tr>
+						<th>
+							Contributor
+						</th>
+						<th>
+							Contribution
+						</th>
+					</tr>
+				</thead>
+				<tbody class="tableBody">
+					<tr>
+						<td><strong><a href="https://ghost-miner.github.io/">GhostMiner</a></strong></td>
+						<td>Article-Writing, Website-Creation and Design</td>
+					</tr>
+					<tr>
+						<td><strong>ItsMe_Raven</strong></td>
+						<td>Article-Writing, Website-Creation and Design</td>
+					</tr>
+					<tr>
+						<td><strong>lich46</strong></td>
+						<td><a href="https://docs.google.com/spreadsheets/d/1ARWbg3C38IYT4FXrgtE46osWOJWUZFyY4WFj49sAM2s/edit#gid=1409809708">Data Collection</a> and Information Feedback</td>
+					</tr>
+					<tr>
+						<td><strong>Gertimoshka</strong></td>
+						<td><a href="https://docs.google.com/spreadsheets/d/1ARWbg3C38IYT4FXrgtE46osWOJWUZFyY4WFj49sAM2s/edit#gid=1409809708">Data Collection</a></td>
+					</tr>
+					<tr>
+						<td><strong>FlediX2</strong></td>
+						<td>Information Feedback and Website Design</td>
+					</tr>
+					<tr>
+						<td><strong>LTU_Adas</strong></td>
+						<td>Information and Design Feedback</td>
+					</tr>
+					<tr>
+						<td><strong>emma</strong></td>
+						<td>Information and Design Feedback</td>
+					</tr>
+				</tbody>
+			</table>
+	
+	</body>
+	
+	<script src="/assets/scripts/pageBuilder.js"></script>
+	<script>BuildPage(true);</script>
 </html>
