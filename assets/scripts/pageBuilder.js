@@ -31,6 +31,7 @@ const isDocumentReady = new Promise((resolve, reject) =>
 let layoutData; let headerData;	let navData; let footerData;
 let layoutHtml; let headerHtml; let navHtml; let footerHtml;
 let commonCssData; let commonCssText; let articleLayoutData; let articleLayoutHtml;
+const redirBoxHtml = '<div class="alert alert-dark" role="alert" id="redirectFrimInfoBox"> Redirected from <var id="redirFromUrl">*url*</var> </div>'
 
 // RETRIEVE CODE FOR EACH COMPONENT
 async function GatherResources(hideSidebar)
@@ -169,8 +170,25 @@ async function CompilePage(hideSidebar)
 	if (galleryElem != undefined)
 	{
 		docMain.insertAdjacentHTML("beforeend",galleryElem.outerHTML);
-		galleryElem	.remove();
+		galleryElem.remove();
 	}
+
+	// Add shadow to sidebar divs
+	const sidebarImage = $(".articleImageBackgroundDiv");
+	for (let i = 0; i < sidebarImage.length; i++)
+	{
+		sidebarImage[i].classList.add("boxShadow04");
+	}
+
+	// Show redirected box 
+	const urlSrc = GetAddressSearch();
+	if (urlSrc.includes("redirfrom"))
+	{
+		const oldUrl = urlSrc.split("=");
+		docMain.insertAdjacentHTML("afterbegin",redirBoxHtml);
+		$("#redirFromUrl")[0].textContent = oldUrl[oldUrl.length - 1].split("%20").join(" ");
+	}
+
 
 	console.timeEnd("_inserStuff");
 	// Hide loading overlay
@@ -196,7 +214,6 @@ async function CompilePage(hideSidebar)
 		docBody.classList.add("pageFadeIn");
 		SelectRandomBackground();
 	}, delay);
-
 	delay = 1000;
 	setTimeout(() =>
 	{
@@ -204,6 +221,9 @@ async function CompilePage(hideSidebar)
 		docBody.classList.remove("pageFadeIn");
 	}, delay);
 	console.timeEnd("__TOTAL_TIME_");
+
+	console.log("===\nREDIRECTED FROM: " + location.search.split("=")[1]+"\n===");
+	
 }
 
 function BuildPage(hideSidebar)
@@ -255,7 +275,8 @@ function StyleTables ()
 		$("#mainContainerForeground")[0].style.overflow = "auto";
 	}
 	// Make table not overflow in small window width
-	const responsiveContainerHtml = '<div class="table-responsive">table</div>';
+	const responsiveContainerHtml = 
+		'<div class="table-responsive"><span style="font-weight:bold; font-style:italic; color:red;"> Could not insert the table. Check the code for incorrect formatting and missing or redundant tags. </span></div>';
 
 	for (let i = 0; i < tables.length; i++)
 	{

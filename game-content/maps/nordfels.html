@@ -27,9 +27,12 @@
 		<meta name='robots'      content="index,follow">
 		<meta name="language"    content="en">
 
-		<link rel="shortcut icon" type="image/png" href="/assets/images/crown.png"> <!-- Tab icon-->
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">  <!-- Responsive design-->
-		<meta charset="utf-8"> <!-- Chatracter set-->
+		<!-- Tab icon-->
+		<link rel="shortcut icon" type="image/png" href="/assets/images/crown.png">
+		<!-- Responsive design-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Chatracter set-->
+		<meta charset="utf-8">
 		<!-- HTMX -->
 		<script src="https://unpkg.com/htmx.org@1.9.4" integrity="sha384-zUfuhFKKZCbHTY6aRR46gxiqszMk5tcHjsVFxnUo8VMus4kHGVdIYVbOYYNlKmHV" crossorigin="anonymous"></script>
 		<!-- jQuery  -->
@@ -44,19 +47,18 @@
 		<script src="/assets/scripts/cookies.js"></script>
 	</head>
 	<body>
-		<!-- PAGE TITLE -->
-		<h1 class="pageTitle"> Nordfels </h1>
-		<hr class="pageTitleUnderline">
-		
-		<!-- CONTENT GOES HERE -->
-		
+        <!-- PAGE TITLE -->
+        <h1 class="pageTitle"> Nordfels </h1>
+        <hr class="pageTitleUnderline">
+        <!-- CONTENT GOES HERE -->
         <span class="pageSubtitle" id="overview"> Overview </span>
         <hr>
         <span class="pageContent">
             <p><strong>Nordfels <em>(German for "North rock")</em> is the first map of Thronefall after the tutorial.</strong></p>
             <p>The map features a large mountain range in the north and a U-shaped river to define the mapborder.</p>
             <p> Enemy units spawn from the north-east, east, south-east, south, and the west of the castle 
-            with the west, south and northeast of the castle only spawning flying units. </p>
+                with the west, south and northeast of the castle only spawning flying units. 
+            </p>
         </span>
         <br>
         <span class="pageSubtitle" id="mapComposition">Map composition</span>
@@ -67,15 +69,15 @@
                 <li>Outisde area unprotected by walls: This area consists of 3 mills, 3 Watchtowers and 1 archer barracks. </li>
                 <li>The front of the castle: Area with 3 houses, 4 watchtowers and 1 barracks.</li>
                 <li>The inner castle: Area with 7 houses, 3 watchtowers, 2 barracks <em>(1 ranged and 1 melee),</em> and the Castle Center building. </li>
-                </ul> 
+            </ul>
         </span>
         <br>
         <span class="pageSubtitle" id="mapDetails">Map details</span>
         <hr>
         <span class="pageSubtitleSmall" id="quests">Quests</span>
         <table>
-            <thead class="table-dark">
-                <tr>                                            
+            <thead>
+                <tr>
                     <th>Name</th>
                     <th>Description</th>
                 </tr>
@@ -107,10 +109,9 @@
                 </tr>
             </tbody>
         </table>
-        
         <span class="pageSubtitleSmall" id="spawnedEnemies">Spawned enemies</span>
         <table>
-            <thead class="table-dark">
+            <thead>
                 <tr>
                     <th>Night</th>
                     <th>Enemies</th>
@@ -171,9 +172,46 @@
                 </tr>
             </tbody>
         </table>
+        <article id="sidebar">
+            <div class="articleImageBackgroundDiv" style="margin-bottom: 20px;">
+                <a href="/assets/images/maps/Nordfels/nordfels_empty.png" target="_blank">
+                <img class="articleImage" src="/assets/images/maps/Nordfels/nordfels_empty.png" alt="image of a fully buult Nordfels castle">
+                </a>
+                <span class="articleImageDescription">Nordfels without any buildings.</span>
+            </div>
+            <div class="articleImageBackgroundDiv">
+                <a href="/assets/images/maps/nordfels/nordfels_lv_select.png lv select.png" target="_blank">
+                <img class="articleImage" src="/assets/images/maps/nordfels/nordfels_lv_select.png" alt="Nordfels in the mapselection">
+                </a> <br>
+                <span class="articleImageDescription">Nordfels in the map selection.</span>
+            </div>
+        </article>
+        <article id="Gallery">
+            <h3 class="pageSubtitle"> Gallery </h3>
+            <hr>
+            <div class="articleGalleryContainer">
+                <div class="articleImageBackgroundDiv">
+                    <a href="/assets/images/maps/nordfels/nordfels_victory.jpg" target="_blank">
+                    <img class="articleGalleryImage" src="/assets/images/maps/nordfels/nordfels_victory.jpg" alt="An empty mapof Nordfels.">
+                    </a> <br>
+                    <span class="articleImageTitle">Nordfels with a fully upgraded castle.</span>
+                </div>
+                <div class="articleImageBackgroundDiv">
+                    <a href="/assets/images/maps/nordfels/nordfels_empty.png    " target="_blank">
+                    <img class="articleGalleryImage" src="/assets/images/maps/nordfels/nordfels_empty.png" alt="Nordfels with a fully built castle">
+                    </a> <br>
+                    <span class="articleImageTitle">Nordfels without any buildings.</span>
+                </div>
+                <div class="articleImageBackgroundDiv">
+                    <a href="/assets/images/maps/nordfels/nordfels_lv_select.png" target="_blank">
+                    <img class="articleGalleryImage" src="/assets/images/maps/nordfels/nordfels_lv_select.png" alt="Nordfels in the mapselection" style="width: 55%;">
+                    </a> <br>
+                    <span class="articleImageTitle">Nordfels in the map selection.</span>
+                </div>
+            </div>
+        </article>
+    </body>
     
-	</body>
-	
 	<script src="/assets/scripts/pageBuilder.js"></script>
 	<script>BuildPage(false);</script>
 </html>

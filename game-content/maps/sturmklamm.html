@@ -27,9 +27,12 @@
 		<meta name='robots'      content="index,follow">
 		<meta name="language"    content="en">
 
-		<link rel="shortcut icon" type="image/png" href="/assets/images/crown.png"> <!-- Tab icon-->
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">  <!-- Responsive design-->
-		<meta charset="utf-8"> <!-- Chatracter set-->
+		<!-- Tab icon-->
+		<link rel="shortcut icon" type="image/png" href="/assets/images/crown.png">
+		<!-- Responsive design-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Chatracter set-->
+		<meta charset="utf-8">
 		<!-- HTMX -->
 		<script src="https://unpkg.com/htmx.org@1.9.4" integrity="sha384-zUfuhFKKZCbHTY6aRR46gxiqszMk5tcHjsVFxnUo8VMus4kHGVdIYVbOYYNlKmHV" crossorigin="anonymous"></script>
 		<!-- jQuery  -->
@@ -43,7 +46,7 @@
 		<!-- Cookies -->
 		<script src="/assets/scripts/cookies.js"></script>
 	</head>
-	<body>
+    <body>
         <!-- PAGE TITLE -->
         <h1 class="pageTitle"> Sturmklamm </h1>
         <hr class="pageTitleUnderline">
@@ -61,7 +64,7 @@
         <hr>
         <span class="pageSubtitleSmall" id="quests">Quests</span>
         <table>
-            <thead class="table-dark">
+            <thead>
                 <tr>
                     <th>Name</th>
                     <th>Description</th>
@@ -109,7 +112,7 @@
         </table>
         <span class="pageSubtitleSmall">Enemies</span>
         <table>
-            <thead class="table-dark">
+            <thead>
                 <tr>
                     <th>Night</th>
                     <th>Enemiess</th>
@@ -170,8 +173,46 @@
                 </tr>
             </tbody>
         </table>
+        <article id="sidebar">
+            <div class="articleImageBackgroundDiv" style="margin-bottom: 20px;">
+                <a href="/assets/images/maps/Sturmklamm/sturmklamm_empty.png" target="_blank">
+                <img class="articleImage" src="/assets/images/maps/Sturmklamm/sturmklamm_empty.png" alt="image of an empty sturmklamm">
+                </a>
+                <span class="articleImageDescription">Sturmklamm without any buildings.</span>
+            </div>
+            <div class="articleImageBackgroundDiv">
+                <a href="/assets/images/maps/sturmklamm/sturmklamm_lv_select.png lv select.png" target="_blank">
+                <img class="articleImage" src="/assets/images/maps/sturmklamm/sturmklamm_lv_select.png" alt="sturmklamm in the mapselection">
+                </a> <br>
+                <span class="articleImageDescription">Sturmklamm in the map selection.</span>
+            </div>
+        </article>
+        <article id="Gallery">
+            <h3 class="pageSubtitle"> Gallery </h3>
+            <hr>
+            <div class="articleGalleryContainer">
+                <div class="articleImageBackgroundDiv">
+                    <a href="/assets/images/maps/sturmklamm/Victory.png" target="_blank">
+                    <img class="articleGalleryImage" src="/assets/images/maps/sturmklamm/Victory.png">
+                    </a> <br>
+                    <span class="articleImageTitle">Sturmklamm with a fully upgraded castle.</span>
+                </div>
+                <div class="articleImageBackgroundDiv">
+                    <a href="/assets/images/maps/sturmklamm/sturmklamm_empty.png" target="_blank">
+                    <img class="articleGalleryImage" src="/assets/images/maps/sturmklamm/sturmklamm_empty.png">
+                    </a> <br>
+                    <span class="articleImageTitle">Sturmklamm without any buildings.</span>
+                </div>
+                <div class="articleImageBackgroundDiv">
+                    <a href="/assets/images/maps/sturmklamm/sturmklamm_lv_select.png lv select.png" target="_blank">
+                    <img class="articleGalleryImage" src="/assets/images/maps/sturmklamm/sturmklamm_lv_select.png" style="width: 55%;">
+                    </a> <br>
+                    <span class="articleImageTitle">Sturmklamm in the map selection.</span>
+                </div>
+            </div>
+        </article>
     </body>
-	
+
 	<script src="/assets/scripts/pageBuilder.js"></script>
 	<script>BuildPage(false);</script>
 </html>
