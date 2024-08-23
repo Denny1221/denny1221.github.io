@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | Reverse tower defense</title>
+  </head>
+  <body style="text-align: center">
+    <canvas id="unity-canvas" width=1137 height=640 style="width: 1137px; height: 640px; background: #231F20"></canvas>
+    <script src="Build/a1.0 web.loader.js"></script>
+    <script>
+      createUnityInstance(document.querySelector("#unity-canvas"), {
+        dataUrl: "Build/a1.0 web.data.gz",
+        frameworkUrl: "Build/a1.0 web.framework.js.gz",
+        codeUrl: "Build/a1.0 web.wasm.gz",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "GhostMiner",
+        productName: "Reverse tower defense",
+        productVersion: "Alpha 1.0",
+        // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
+        // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+      });
+      document.body.innerHTML = '<iframe src="https://html-classic.itch.zone/html/5349349/index.html" width="1200px" height="660px" style="padding:0px; margin:0px; border:0px; position:relative;" frameborder="1"></iframe>';
+    </script>
+  </body>
+</html>
